@@ -32,6 +32,7 @@ elseif w<h
     y = padarray(y,[0,padLeft,0],'pre');
     y = padarray(y,[0,padRight,0],'post');
 end
+[h,w,~] = size(y);
 
 % get the Fourier domain sampling pattern
 opts.imHeight = h; opts.imWidth = w; opts.nX = nX; opts.nY = nY;
