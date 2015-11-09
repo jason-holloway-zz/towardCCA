@@ -1,2 +1,3 @@
 # remove matlab autosave files
 .asv
+*.asv
