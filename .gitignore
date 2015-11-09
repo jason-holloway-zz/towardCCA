@@ -1,3 +1,6 @@
 # remove matlab autosave files
 .asv
 *.asv
+realData/dasani.mat
+realData/fingerprint.mat
+realData/realData.zip
