@@ -14,7 +14,10 @@ The codes are written in a decentralized fashion to keep the main file clean and
 
 *NOTE:* The provided codes are soley dependent on the number of iterations provided by the user. In general there is a backprojection critera which stops the algorithm once the solution has converged, but this is not present here to allow the user more flexibility when experimenting with the codes.
 
-### Data
+### Data Download
+Due to size restrictions, the experimental data for the Dasani and Fingerprint datasets cannot be uploaded to Github. You may find all three datasets in a zip file on the project webpage, or by [clicking here](http://jrholloway.com/projects/towardCCA/realData.zip) [257 MB]. The USAF data can be found both on Github and in the zip file.
+
+### Data acquisition
 **Alignment:**
 In our experimental setup, data is collected by translating a camera using a 2D stage. The change in perspective between each viewpoint induces a depth-based disparity which must be corrected for. As the targets are planar, homographies can be used to warp each of the images to align with the center viewpoint. We compute these homographies by finding fiducial markers in the scene. These features are taken to be the corners of a chessboard pattern which is affixed around the target within the field of view of the camera. The datasets provided here have already been aligned and cropped to remove the checkerboard pattern (this both reduces the file size and ensures repeatability).
 
