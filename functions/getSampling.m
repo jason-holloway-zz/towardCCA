@@ -28,15 +28,15 @@ pupil = single(pupil);
 hROW = ROW+floor(apShift*(Tx-1));
 hCOL = COL+floor(apShift*(Ty-1));
 
-% check to make sure hROW and hCOL are correctly sized
-if (apShift-floor(apShift)) > eps
-    if mod(hROW,2)==1
-        hROW = hROW+1;
-    end
-    if mod(hCOL,2)==1
-        hCOL = hCOL+1;
-    end
-end
+% % check to make sure hROW and hCOL are correctly sized
+% if (apShift-floor(apShift)) > eps
+%     if mod(hROW,2)==1
+%         hROW = hROW+1;
+%     end
+%     if mod(hCOL,2)==1
+%         hCOL = hCOL+1;
+%     end
+% end
 
 % check to see if the shift is fractional
 if (apShift - floor(apShift)) > eps
