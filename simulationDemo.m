@@ -76,7 +76,11 @@ end
 
 
 % load the ground truth image
-load([dataset '.mat'],'im');
+try
+    load([dataset '.mat'],'im');
+catch
+    error('Dataset must contain a variable called ''im''');
+end
 
 % convert to floating point (use singles to save memory)
 im = im2single(im); %#ok<NODEF>
@@ -106,14 +110,20 @@ opts.samplingPattern = ones(opts.nY,opts.nX);
 fprintf('Creating the input data cube\n');
 y = forwardModel(im,opts); % y is the squared magnitude
 
+fprintf('Adding noise\n');
 % add noise
 if ~isinf(SNR)
     y = addNoise(y,SNR);
 end
 y(y<0)=0; % input cannot be negative (avoid noise causing a negative signal)
 
-y = imresize(y,.5,'bilinear');
+% % resize input images IFF the aperture diameter is at most 1/4 the size
+% % of the input images
+% if apDia/h <= .25
+%     y = imresize(y,.5,'bilinear');
+% end
 
+fprintf('Recovering high resolution image');
 % recover the high resolution image
 recov = ptychMain(y,apDia,spacing,nIts,opts.samplingPattern);
 
