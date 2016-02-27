@@ -19,6 +19,10 @@ function [recov,input] = realDataDemo(dataset)
 
 clc, close all force
 
+% make sure the functions are located on MATLAB's path
+setupPtych;
+
+
 if ~exist('dataset','var') || isempty(dataset)
     dataset = 'realData\fingerprint';
 end

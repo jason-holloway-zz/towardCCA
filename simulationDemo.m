@@ -49,6 +49,9 @@ function [recov,input,gt] = simulationDemo(dataset,apDia,overlap,N,SNR,nIts)
 
 clc, close all force
 
+% make sure the functions are located on MATLAB's path
+setupPtych;
+
 % check to see which input parameters have been provided
 if ~exist('dataset','var') || isempty(dataset)
     dataset = 'resChart';
